@@ -7,7 +7,7 @@
 
 
 <p align="center">
-  <img src="./img/nordvpnalert.png" alt="Size Limit CLI" width="738">
+  <img src="./img/nordvpnalert.png" alt="Nordvpn check status" width="738">
 </p>
 
  Written in <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/> **Nordvpn check status** is a tool that checks if you are realy connected to nordvpn. you can always curl https://jsonip.com, but if you don't have a fixed ip address than your local WAN ip reference will never be the same, instead of hard coding it, use **Nordvpn check status** to see if your ip protection is on or of. This tool is very handy speacialy if you are connected over a router with NordVpn installed on it, and you do not have the Desktop application standard notification
