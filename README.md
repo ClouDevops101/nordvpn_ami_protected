@@ -10,7 +10,7 @@
   <img src="./img/nordvpnalert.png" alt="Size Limit CLI" width="738">
 </p>
 
- Written in <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/> Nordvpn check status is a tool that checks if you are realy connected to nordvpn. you can always curl https://jsonip.com, but if you don't have a fixed ip address than, it's difficult to see if your ip protection is on or of. This tool is very handy speacialy if you are connected over a router with nord vpn installed on it, and you do not have the Desktop application standard notification
+ Written in <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/> **Nordvpn check status** is a tool that checks if you are realy connected to nordvpn. you can always curl https://jsonip.com, but if you don't have a fixed ip address than your local WAN ip reference will never be the same, instead of hard coding it, use **Nordvpn check status** to see if your ip protection is on or of. This tool is very handy speacialy if you are connected over a router with NordVpn installed on it, and you do not have the Desktop application standard notification
 
 
 * **MacOs**, **Linux** and **Windows** support.
@@ -20,7 +20,7 @@
     - **Redhat** 
     - **Fedora** 
     - **CentOS** 
-* for other os platforme go in DIY mode by finding the way to install notify send command https://command-not-found.com/notify-send
+* for other os platforme go in `DIY` mode by finding the way to install notify send command https://command-not-found.com/notify-send
 
 ## Who Uses Nordvpn check status 
 
@@ -36,9 +36,9 @@
 
 ## How It Works
 
-1. Nordvpn check status hit the link https://nordvpn.com/wp-admin/admin-ajax.php?action=get_user_info_data and get your connection status in a json format 
+1. **Nordvpn check status**  hit the link https://nordvpn.com/wp-admin/admin-ajax.php?action=get_user_info_data and get your connection status in a json format 
 2. Based on your connection status Nordvpn check status send a notification over you OS
-3. Nordvpn check status keep tracking of the status every 10s and notify if there is any change. otherwise it remains silent and gentil
+3. **Nordvpn check status**  keep tracking of the status every 10s and notify if there is any change. otherwise it remains silent and gentil
 
 ## Usage
 
@@ -49,56 +49,17 @@
   ```sh
   $ python3 nordvpn-macalerter.py   
   ```
-  
+  work also with python 2 
 
-2. Add the `size-limit` section and the `size` script to your `package.json`:
+  ```sh
+  $ python2 nordvpn-macalerter.py   
+  ```
 
-    ```diff
-    + "size-limit": [
-    +   {
-    +     "path": "dist/app-*.js"
-    +   }
-    + ],
-      "scripts": {
-        "build": "webpack ./webpack.config.js",
-    +   "size": "npm run build && size-limit",
-        "test": "jest && eslint ."
-      }
-    ```
-
-3. Here’s how you can get the size for your current project:
-
-    ```sh
-    $ npm run size
-
-      Package size: 30.08 kB with all dependencies, minified and gzipped
-    ```
-
-4. Now, let’s set the limit. Add 25% to the current total time and use that as
-   the limit in your `package.json`:
-
-    ```diff
-      "size-limit": [
-        {
-    +     "limit": "35 kB",
-          "path": "dist/app-*.js"
-        }
-      ],
-    ```
-
-5. Add the `size` script to your test suite:
-
-    ```diff
-      "scripts": {
-        "build": "webpack ./webpack.config.js",
-        "size": "npm run build && size-limit",
-    -   "test": "jest && eslint ."
-    +   "test": "jest && eslint . && npm run size"
-      }
-    ```
-
-6. If you don’t have a continuous integration service running, don’t forget
-   to add one — start with [Travis CI].
+2. Adjust the below varriables following your need 
+  ```python 
+  timeBeforeNextCheck = 10
+  requestTimeOut=10
+  ````
 
 </details>
 

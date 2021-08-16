@@ -5,10 +5,10 @@ import requests
 from time import sleep
 from sys import platform as _platform
 
-global lastNotifStatus, timeBeforeCheck, requestTimeOut, URL, headers
+global lastNotifStatus, timeBeforeNextCheck, requestTimeOut, URL, headers
 
 lastNotifStatus = False
-timeBeforeCheck = 10
+timeBeforeNextCheck = 10
 requestTimeOut=10
 URL='https://nordvpn.com/wp-admin/admin-ajax.php?action=get_user_info_data'
 headers = {'User-Agent': 'Mozilla/7.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.39 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/539.36', 'Pragma': 'no-cache'}
@@ -57,6 +57,8 @@ def loop():
             data = myResponse.json();
         except:
             print ('error')
+            notify("VPN Alert [Unknown]","Network Error")
+            sleep(timeBeforeNextCheck)
             continue
     
         if data["status"] == True and lastNotifStatus == False:
@@ -65,7 +67,7 @@ def loop():
         elif data["status"] == False and  lastNotifStatus == True:
             notify("VPN Alert [Unprotected]","IP: " + data["ip"] + "\nISP : "  +  data["isp"] + "\n" + data["city"] + " ," + data["country"] )
             lastNotifStatus = False
-        sleep(timeBeforeCheck)
+        sleep(timeBeforeNextCheck)
 
 if __name__ == "__main__":
     loop()
