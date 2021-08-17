@@ -12,7 +12,9 @@
 
  Written in <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/> **Nordvpn check status** is a tool that checks if you are realy connected to nordvpn. you can always curl https://jsonip.com, but if you don't have a fixed ip address than your local WAN ip reference will never be the same, instead of hard coding it, use **Nordvpn check status** to see if your ip protection is on or of. This tool is very handy speacialy if you are connected over a router with NordVpn installed on it, and you do not have the Desktop application standard notification
 
+The tool has many features and support runing on multiple platform : 
 
+* **Nordvpn check status** is able to detect the Operating System and speak to the appropriate *Notification Manager*
 * **MacOs**, **Linux** and **Windows** support.
 * Added support of various Linux verion : 
     - **Ubuntu**
@@ -20,7 +22,7 @@
     - **Redhat** 
     - **Fedora** 
     - **CentOS** 
-* for other os platforme go in `DIY` mode by finding the way to install notify send command https://command-not-found.com/notify-send
+* For other operation system go in `DIY` mode by finding the way to install notify send command https://command-not-found.com/notify-send
 
 ## Who Uses Nordvpn check status 
 
@@ -71,24 +73,48 @@ i already tested this second new url URL2='https://api.nordvpn.com/vpn/check/ful
 ###### ajax version : 
 
  ```JSON
- {"coordinates":{"latitude":48.8607,"longitude":2.3281},"ip":"195.200.221.41","isp":"Tefincom S.A.","host":{"ip_address":"195.200.221.41"},"status":true,"country":"France","region":"Paris","city":"Paris","location":"France, Paris, Paris","area_code":"75001","country_code":"FR"}
+ {
+   "coordinates":
+                {
+                  "latitude":48.8607,
+                  "longitude":2.3281
+                },
+  "ip":"195.200.221.41",
+  "isp":"Tefincom S.A.",
+  "host":
+        {
+          "ip_address":"195.200.221.41"
+        },
+        "status":true,
+        "country":"France",
+        "region":"Paris",
+        "city":"Paris",
+        "location":"France, Paris, Paris",
+        "area_code":"75001",
+        "country_code":"FR"
+  }
  ```
 ###### api version  : 
 
   ```JSON
-  {"ip":"195.200.221.41","isp":"Unknown","status":"Protected","country":"Germany","code":"DE"}
+  {
+    "ip":"195.200.221.41",
+    "isp":"Unknown",
+    "status":"Protected",
+    "country":"Germany",
+    "code":"DE"
+  }
   ```
 
-**Update** 17 August 2021
-* Handeling case when internet is back from failure 
+
 
 ## Credits :
 Many thanks to @Dreyer https://gist.github.com/Dreyer/
 161b920f0d8300ed3bc750ae2f80c339
  where you can find the script in it's shell version with curl
 
-  ###### for awesome badges 
-  https://github.com/alexandresanlim/Badges4-README.md-Profile/blob/master/README.md
+###### for awesome badges 
+https://github.com/alexandresanlim/Badges4-README.md-Profile/blob/master/README.md
 
   
 
