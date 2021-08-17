@@ -56,8 +56,9 @@ def loop():
             #print(myResponse.json())
             data = myResponse.json();
         except:
-            print ('error')
+            #print ('error')
             notify("VPN Alert [Unknown]","Network Error")
+            lastNotifStatus = False
             sleep(timeBeforeNextCheck)
             continue
     

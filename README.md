@@ -79,6 +79,9 @@ i already tested this second new url URL2='https://api.nordvpn.com/vpn/check/ful
   {"ip":"195.200.221.41","isp":"Unknown","status":"Protected","country":"Germany","code":"DE"}
   ```
 
+**Update** 17 August 2021
+* Handeling case when internet is back from failure 
+
 ## Credits :
 Many thanks to @Dreyer https://gist.github.com/Dreyer/
 161b920f0d8300ed3bc750ae2f80c339
