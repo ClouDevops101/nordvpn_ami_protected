@@ -13,7 +13,7 @@ requestTimeOut=10
 URL='https://nordvpn.com/wp-admin/admin-ajax.php?action=get_user_info_data'
 headers = {'User-Agent': 'Mozilla/7.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.39 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/539.36', 'Pragma': 'no-cache'}
 
-# Some Functions 
+# Some Functions here
 def notify(title, text):
     """
     notify("Title", "Heres an alert")
