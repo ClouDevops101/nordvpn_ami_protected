@@ -16,21 +16,11 @@ URL = 'https://nordvpn.com/wp-admin/admin-ajax.php?action=get_user_info_data'
 headers = {
     'User-Agent': 'Mozilla/7.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.39 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/539.36', 'Pragma': 'no-cache'}
 
-<<<<<<< HEAD
 # Some Functions
 
 if _platform == "linux" or _platform == "linux2":
     def notify(title, text):
         # linux
-=======
-# Some Functions here
-def notify(title, text):
-    """
-    notify("Title", "Heres an alert")
-    """
-    if _platform == "linux" or _platform == "linux2":
-    # linux
->>>>>>> 84aca8a283178d92373e6c66edf474d3c12d22dd
         """ 
         Ubuntu -> sudo apt-get install notify-osd  
         Debian -> sudo apt install libnotify-bin 
@@ -59,37 +49,6 @@ elif _platform == "win64":
         """ 
         require installing this http://vaskovsky.net/notify-send/
         """
-# def notify(title, text):
-#     """
-#     notify("Title", "Heres an alert")
-#     """
-#     if _platform == "linux" or _platform == "linux2":
-#     # linux
-#         """
-#         Ubuntu -> sudo apt-get install notify-osd
-#         Debian -> sudo apt install libnotify-bin
-#         Redhat/Fedora/CentOS -> yum install libnotify
-#         for other version please see this page https://command-not-found.com/notify-send
-#         """
-#         os.system("""
-#                  notify-send "{}" "{}"
-#                  """.format(text, title))
-
-#     elif _platform == "darwin":
-#     # MAC OS X
-#         os.system("""
-#                  osascript -e 'display notification "{}" with title "{}"'
-#                  """.format(text, title))
-#     elif _platform == "win32":
-#     # Windows 32-bit
-#         """
-#         require installing this http://vaskovsky.net/notify-send/
-#         """
-#     elif _platform == "win64":
-#     # Windows 64-bit
-#         """
-#         require installing this http://vaskovsky.net/notify-send/
-#         """
 
 
 def loop():
